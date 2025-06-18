@@ -3,7 +3,7 @@ Feature: Verificación de íconos de redes sociales en SauceDemo
   Background:
     Given I am on the login page of SauceDemo
 
-  @social
+  @bvt @social
   Scenario Outline: Verificar íconos de redes sociales con distintos usuarios
     When I login with username "<username>" and password "secret_sauce"
     Then the Twitter icon should link to "https://twitter.com/saucelabs"

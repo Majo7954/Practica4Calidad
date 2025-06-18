@@ -17,7 +17,8 @@ Feature: Checkout process in SauceDemo
   Scenario: Cancel checkout from information page
     When I click on Cancel
     Then I should be redirected to the cart page
-
+    
+  @bvt 
   @finish
   Scenario: Finish checkout process
     When I enter my first name "Maria", last name "Lopez" and postal code "45678"

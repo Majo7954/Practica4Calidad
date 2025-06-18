@@ -3,26 +3,25 @@ Feature: Login to Swag Labs
   Background:
     Given I am on the login page
 
-  @passed
-Scenario Outline: Login with valid user <user>
-  When I login with username "<user>" and password "secret_sauce"
-  Then I should be redirected to the inventory page
+  @bvt @passed
+  Scenario Outline: Login with valid user <user>
+    When I login with username "<user>" and password "secret_sauce"
+    Then I should be redirected to the inventory page
+    And I see the swaglab with 6 differents products and prices.
 
-Examples:
-  | user                    |
-  | standard_user           |
-  | problem_user            |
-  | performance_glitch_user |
-  | error_user              |
-  | visual_user             |
+    Examples:
+      | user                    |
+      | standard_user           |
+      | problem_user            |
+      | performance_glitch_user |
+      | error_user              |
+      | visual_user             |
 
-  @locked
-  @rejected
+  @bvt @locked @rejected
   Scenario: Login with locked out user
     When I login with username "locked_out_user" and password "secret_sauce"
     Then I should see an error message "Epic sadface: Sorry, this user has been locked out."
     And I should remain on the login page
-    And I see the swaglab with 6 differents products and prices.
 
   @rejected
   Scenario: Attempt to login with empty username and password

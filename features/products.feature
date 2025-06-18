@@ -4,7 +4,8 @@ Feature: Navegación y ordenamiento de productos
     Given I am on the login page of SauceDemo
     When I login with username "standard_user" and password "secret_sauce"
     Then I should be on the products page
-
+    
+  @bvt 
   @view
   Scenario: Ver productos listados
     Then I should see a list of available products
@@ -17,7 +18,7 @@ Feature: Navegación y ordenamiento de productos
   Scenario: Ver información de los productos
     Then I should see the product "Sauce Labs Backpack" with price "$29.99"
     And I should see the product "Sauce Labs Bike Light" with price "$9.99"
-
+  @bvt 
   @add
   Scenario: Agregar un solo producto al carrito
     When I add the product "Sauce Labs Backpack" to the cart
@@ -29,6 +30,7 @@ Feature: Navegación y ordenamiento de productos
     And I add the product "Sauce Labs Bolt T-Shirt" to the cart
     Then the cart icon should show "2"
 
+  @bvt 
   @sort
   Scenario Outline: Ordenar productos por <criterio>
     When I sort the products by "<criterio>"

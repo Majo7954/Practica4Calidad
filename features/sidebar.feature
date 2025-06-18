@@ -45,7 +45,6 @@ Examples:
     And I open the sidebar
     And I click on "About"
     Then I should be redirected to "https://saucelabs.com/error/404"
-    And I see the SauceLabs homepage
     And I see an error "404 Not Found" in the homepage
     And I see a green robot next to the message
 
